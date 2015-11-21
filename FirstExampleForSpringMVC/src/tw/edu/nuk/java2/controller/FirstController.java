@@ -27,7 +27,9 @@ public class FirstController {
 	}
 	
 	@RequestMapping(value="/hello", method=RequestMethod.POST)
-	public String showSuccess(@ModelAttribute("product") Product product, Model model) {
+	public String showSuccess(@ModelAttribute("prod") Product product, Model model) {
+		product.setDescription("New description");
+		
 		return "ShowProductResult";
 	}
 	
@@ -56,6 +58,38 @@ public class FirstController {
 		return "MultiValuesView";
 	}
 	
+	@RequestMapping("/productlist")
+	public String showProductList(Model model) {
+		
+		List<Product> products = new ArrayList<Product>();
+		
+		Product prod1 = new Product();
+		prod1.setpNo(1);
+		prod1.setName("Head First Servlet");
+		prod1.setDescription("The introduction to servlet");
+		prod1.setCategory("Book");
+		products.add(prod1);
+		
+		Product prod2 = new Product();
+		prod2.setpNo(2);
+		prod2.setName("看見台灣");
+		prod2.setDescription("空中鳥瞰台灣");
+		prod2.setCategory("DVD");
+		products.add(prod2);
+		
+		Product prod3 = new Product();
+		prod3.setpNo(3);
+		prod3.setName("杜蘭多公主");
+		prod3.setDescription("普契尼歌劇");
+		prod3.setCategory("CD");
+		products.add(prod3);
+		
+		model.addAttribute("products",products);
+		
+		
+		return "ProductList";
+	}
+	
 	@RequestMapping("/product")
 	public String showProduct(Model model) {
 		
@@ -64,7 +98,7 @@ public class FirstController {
 		product.setpNo(1);
 		product.setName("Head First Servlet");
 		product.setDescription("The introduction to servlet");
-		model.addAttribute("product", product);
+		model.addAttribute("prod", product);
 		
 		return "ProductView";
 	}

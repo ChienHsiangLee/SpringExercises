@@ -11,7 +11,7 @@
 <title>The View of Product Specification</title>
 </head>
 <body>
-<form:form modelAttribute="product" action="insertDetail" method="post">
+<form:form modelAttribute="prod">
     <table>
         <form:input type="hidden" path="pNo" />
         <tr>

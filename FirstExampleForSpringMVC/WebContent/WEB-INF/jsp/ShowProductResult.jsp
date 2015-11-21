@@ -7,8 +7,8 @@
 <title>商品儲存結果</title>
 </head>
 <body>
-  name: ${product.name} <br>
-  description: ${product.description} <br>
-  cateogry: ${product.category}
+  name: ${prod.name} <br>
+  description: ${prod.description} <br>
+  cateogry: ${prod.category}
 </body>
 </html>

@@ -6,9 +6,6 @@ public class Product {
 	private String description;
 	private String category;
 	
-	
-	
-	
 	public int getpNo() {
 		return pNo;
 	}
@@ -33,6 +30,7 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
 	
 
 }
